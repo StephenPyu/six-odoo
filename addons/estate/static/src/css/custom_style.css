@@ -1,0 +1,60 @@
+/* custom_style.css */
+.o_list_view .o_data_row.text-info {
+    font-weight: bold;
+}
+
+.o_list_view .o_data_row.text-error {
+    color: red;
+}
+
+/* Custom Styles for Offer Status */
+.o_list_view .o_data_row.bg-success {
+    background-color: #28a745 !important;  /* Green */
+}
+
+.o_list_view .o_data_row.bg-danger {
+    background-color: #dc3545 !important;  /* Red */
+}
+
+/*
+.o_main_navbar {
+    background-color: #161d26 !important;
+}
+
+.btn-primary {
+    background-color: #161d26 !important;
+    border-color: #eeeeee !important;
+}
+
+.o_header_title {
+    color: #ffffff !important;
+}
+
+.o_main_navbar {
+    background-color: #161d26 !important;
+}
+
+.o_main_navbar .o_menu_sections .o_nav_entry {
+    background-color: #161d26 !important;
+}
+
+.o_main_navbar .o_menu_sections .dropdown-toggle {
+    background-color: #161d26 !important;
+}
+*/
+
+/*
+.o_menu_item {
+    color: #ffffff !important;
+}
+
+.o_menu_item.active {
+    background-color: #ffff00 !important;
+    color: #ffffff !important;
+}
+
+.o_menu_item:hover {
+    background-color: #ffff00 !important;
+    color: #ffffff !important;
+}*/
+

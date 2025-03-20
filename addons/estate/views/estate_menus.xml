@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--Define the three levels menu to list the properties and display the detailed form of the property
+    Level 1: 'Real Estate' will be displayed in the Apps dropdown list
+    Level 2: 'Advertisements' will be displayed in the Menu bar
+    Level 3: 'Properties' defined in the action
+    -->
+    <menuitem id="estate_property_menu_root" name="Real Estate">
+        <menuitem id="advertisement_menu" name="Advertisements">
+            <menuitem id="estate_property_action_menu" action="estate_property_action"/>
+        </menuitem>
+        <menuitem id="setting_menu" name="Setting">
+            <menuitem id="estate_property_type_action_menu" action="estate_property_type_action"/>
+            <menuitem id="estate_property_tag_action_menu" action="estate_property_tag_action"/>
+        </menuitem>
+    </menuitem>
+
+</odoo>
