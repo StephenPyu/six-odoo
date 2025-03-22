@@ -1,2 +1,0 @@
-ALTER DATABASE six_odoo OWNER TO six_odoo_admin;
-GRANT ALL PRIVILEGES ON DATABASE six_odoo TO six_odoo_admin;
