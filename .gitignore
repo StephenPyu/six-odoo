@@ -23,6 +23,13 @@ odoo/addons/base/maintenance
 # window installation config file
 /odoo.conf
 
+/odoo-docker.conf
+/odoo-k3s.conf
+/ops.rm
+/Dockerfile
+/Dockerfile-k3s
+/Dockerfile-k3s-python3
+
 # generated for windows installer?
 install/win32/*.bat
 install/win32/meta.py

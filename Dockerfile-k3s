@@ -1,28 +1,12 @@
-FROM python:3.12.2-slim
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    g++ \
-    postgresql-client \
-    libpq-dev \
-    git \
-    gcc \
-    python3-dev \
-    libxslt1-dev \
-    libldap2-dev \
-    libsasl2-dev \
-    libssl-dev \
-    wkhtmltopdf && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+FROM six-odoo-k3s-python3:latest
 
 # Set environment variables
 ENV ODOO_VERSION=18.0 \
     ODOO_HOME=/opt/odoo \
     ODOO_USER=odoo \
-    ODOO_LOCAL_CONFIG=odoo-docker.conf \
+    ODOO_LOCAL_CONFIG=odoo-k3s.conf \
     ODOO_CONFIG=/etc/odoo/odoo.conf \
     ODOO_EXTRA_ADDONS=/etc/addons
-
 
 # Create Odoo user and directories
 RUN useradd -m -d $ODOO_HOME -U -r -s /bin/bash $ODOO_USER
@@ -45,7 +29,11 @@ EXPOSE 8069
 
 # Define entrypoint
 USER $ODOO_USER
-CMD ["python3", "odoo-bin", "--config", "/etc/odoo/odoo.conf"]
+#CMD ["python3", "odoo-bin", "--config", "/etc/odoo/odoo.conf"]
+#CMD ["python3", "odoo-bin", "--config", "/etc/odoo/odoo.conf", "-d", "six_odoo", "--init=base", "--stop-after-init"]
+CMD ["python3", "odoo-bin", "--config", "/etc/odoo/odoo.conf", "-d", "six_odoo", "--without-demo=all"]
 
+#docker buildx build -f Dockerfile-k3s --platform linux/amd64 -t six-odoo-k3s:18.0.1 .
+#docker inspect six-odoo-k3s:18.0.1 | grep Architecture
 #docker run -d --name six-odoo -p 8069:8069 -v /Users/yuping/Work/odoo/addons-external/oca/tutorials:/etc/addons six-odoo:18.0
 #docker exec -it six-odoo /bin/bash
